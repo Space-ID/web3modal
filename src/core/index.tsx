@@ -42,7 +42,7 @@ function arrayMove(arr: any, oldIndex: any, newIndex: any) {
 
 function updateOrder(userOptions: IProviderUserOptions[] ): IProviderUserOptions[]{
   const coinbaseIndex = userOptions.findIndex((element: any) => element.name === 'Coinbase wallet')
-  return arrayMove(userOptions, coinbaseIndex, 1)
+  return arrayMove(userOptions, coinbaseIndex, 2)
 }
 
 export class Core {
