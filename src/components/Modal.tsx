@@ -172,6 +172,9 @@ export class Modal extends React.Component<IModalProps, IModalState> {
 
     const { onClose, lightboxOpacity, userOptions, themeColors } = this.props;
 
+    console.log('userOptions: ', userOptions)
+    debugger
+
     return (
       <SLightbox
         className={MODAL_LIGHTBOX_CLASSNAME}

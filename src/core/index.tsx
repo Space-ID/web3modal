@@ -29,6 +29,22 @@ const defaultOpts: ICoreOptions = {
   network: ""
 };
 
+function arrayMove(arr: any, oldIndex: any, newIndex: any) {
+  if (newIndex >= arr.length) {
+    let k = newIndex - arr.length + 1;
+    while (k--) {
+      arr.push(undefined);
+    }
+  }
+  arr.splice(newIndex, 0, arr.splice(oldIndex, 1)[0]);
+  return arr;
+};
+
+function updateOrder(userOptions: IProviderUserOptions[] ): IProviderUserOptions[]{
+  const coinbaseIndex = userOptions.findIndex((element: any) => element.name === 'Coinbase wallet')
+  return arrayMove(userOptions, coinbaseIndex, 1)
+}
+
 export class Core {
   private show: boolean = INITIAL_STATE.show;
   private themeColors: ThemeColors;
@@ -58,7 +74,7 @@ export class Core {
     );
     this.providerController.on(ERROR_EVENT, error => this.onError(error));
 
-    this.userOptions = this.providerController.getUserOptions();
+    this.userOptions = updateOrder(this.providerController.getUserOptions());
     this.renderModal();
   }
 
