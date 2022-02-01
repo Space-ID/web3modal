@@ -26,7 +26,11 @@ const defaultOpts: ICoreOptions = {
   cacheProvider: false,
   disableInjectedProvider: false,
   providerOptions: {},
-  network: ""
+  network: "",
+  text: {
+    heading: "Connect wallet",
+    subheading: "Select a wallet to sign in."
+  }
 };
 
 export class Core {
@@ -36,6 +40,10 @@ export class Core {
   private lightboxOpacity: number;
   private providerController: ProviderController;
   private userOptions: IProviderUserOptions[];
+  private text: {
+    heading: string;
+    subheading: string;
+  };
 
   constructor(opts?: Partial<ICoreOptions>) {
     const options: ICoreOptions = {
@@ -44,6 +52,7 @@ export class Core {
     };
 
     this.lightboxOpacity = options.lightboxOpacity;
+    this.text = options.text;
     this.themeColors = getThemeColors(options.theme);
 
     this.providerController = new ProviderController({
@@ -155,6 +164,7 @@ export class Core {
         onClose={this.onClose}
         resetState={this.resetState}
         lightboxOpacity={this.lightboxOpacity}
+        text={this.text}
       />,
       document.getElementById(WEB3_CONNECT_MODAL_ID)
     );

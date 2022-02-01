@@ -1,6 +1,7 @@
 export interface ICoreOptions extends IProviderControllerOptions {
   lightboxOpacity: number;
   theme: string | ThemeColors;
+  text: Record<"heading" | "subheading", string>;
 }
 
 export interface IProviderControllerOptions {
@@ -23,6 +24,7 @@ export interface IProviderDisplay {
   name: string;
   logo: string;
   description?: string;
+  color?: string;
 }
 
 export interface IProviderInfo extends IProviderDisplay {
@@ -57,6 +59,7 @@ export interface IProviderUserOptions {
   name: string;
   logo: string;
   description: string;
+  color?: string;
   onClick: () => Promise<void>;
 }
 
@@ -80,6 +83,7 @@ export type ChainDataList = {
 
 export type ThemeColors = {
   background: string;
+  textInContent: string;
   main: string;
   secondary: string;
   border: string;

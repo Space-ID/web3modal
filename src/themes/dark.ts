@@ -4,6 +4,7 @@ const darkTheme: IThemeConfig = {
   name: "dark",
   colors: {
     background: "rgb(39, 49, 56)",
+    textInContent: "rgb(255, 255, 255)",
     main: "rgb(199, 199, 199)",
     secondary: "rgb(136, 136, 136)",
     border: "rgba(195, 195, 195, 0.14)",

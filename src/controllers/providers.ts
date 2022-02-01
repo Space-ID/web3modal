@@ -151,10 +151,11 @@ export class ProviderController {
     providerList.forEach((id: string) => {
       let provider = this.getProvider(id);
       if (typeof provider !== "undefined") {
-        const { id, name, logo, connector } = provider;
+        const { id, name, logo, color, connector } = provider;
         userOptions.push({
           name,
           logo,
+          color,
           description: getProviderDescription(provider),
           onClick: () => this.connectTo(id, connector)
         });

@@ -36,7 +36,7 @@ export const fonts = {
     extrabold: 800,
   },
   family: {
-    OpenSans: '"Open Sans", sans-serif',
+    Manrope: '"Manrope", Helvetica, Arial, sans-serif',
   },
 };
 
@@ -82,8 +82,6 @@ export const responsive = {
 };
 
 export const globalStyle = `
-  @import url('https://fonts.googleapis.com/css?family=Open+Sans:400,500,600,700,800');
-
   html, body, #root {
     height: 100%;
     width: 100%;
@@ -92,7 +90,7 @@ export const globalStyle = `
   }
 
   body {
-    font-family: ${fonts.family.OpenSans};
+    font-family: ${fonts.family.Manrope};
     font-style: normal;
     font-stretch: normal;
     font-weight: ${fonts.weight.normal};
@@ -107,7 +105,7 @@ export const globalStyle = `
   	-webkit-text-size-adjust: 100%;
     -webkit-overflow-scrolling: touch;
     -ms-text-size-adjust: 100%;
-    -webkit-text-size-adjust: 100%;  
+    -webkit-text-size-adjust: 100%;
   }
 
   button {
@@ -153,7 +151,7 @@ export const globalStyle = `
 
   a {
     background-color: transparent;
-    -webkit-text-decoration-skip: objects;  
+    -webkit-text-decoration-skip: objects;
     text-decoration: none;
     color: inherit;
     outline: none;
