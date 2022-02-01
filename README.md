@@ -180,7 +180,7 @@ of the package, and set
 
 ```js
 const web3Modal = new Web3Modal({
-    ...otheroOptions,
+    ...otherOptions,
     providerOptions: {
         walletconnect: {
             package: () => import('@walletconnect/web3-provider'),
