@@ -5,8 +5,6 @@ import { convertUtf8ToHex } from "@walletconnect/utils";
 // @ts-ignore
 import Web3Modal from "web3modal";
 // @ts-ignore
-import WalletConnect from "@walletconnect/web3-provider";
-// @ts-ignore
 import Torus from "@toruslabs/torus-embed";
 // @ts-ignore
 import WalletLink from "walletlink";
@@ -234,7 +232,8 @@ class App extends React.Component<any, any> {
     console.log("infuraId", infuraId);
     const providerOptions = {
       walletconnect: {
-        package: WalletConnect,
+        package: () => import("@walletconnect/web3-provider"),
+        packageFactory: true,
         options: {
           infuraId
         }

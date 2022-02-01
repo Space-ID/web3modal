@@ -171,14 +171,40 @@ These are all the providers available with Web3Modal and how to configure their 
 - [Binance Chain Wallet](./docs/providers/binancechainwallet.md)
 - [WalletLink](./docs/providers/walletlink.md)
 
+### Importing providers dynamically
+
+For the options above you will be asked to provide a `package`. You may optionally import those packages dynamically so
+that you only import the ones the user actually uses. You just need to provide a function that returns a dynamic import
+of the package, and set
+`packageFactory` to true, e.g:
+
+```js
+const web3Modal = new Web3Modal({
+    ...otheroOptions,
+    providerOptions: {
+        walletconnect: {
+            package: () => import('@walletconnect/web3-provider'),
+            packageFactory: true,
+            options: {
+                infuraId: INFURA_ID
+            }
+        }
+    }
+});
+```
+
 ## API
 
 ```typescript
 class Web3Modal {
   cachedProvider: string;
+
   connect(): Promise<any>;
+
   connectTo(id: string): Promise<any>;
+
   toggleModal(): Promise<void>;
+
   on(event: string, callback: SimpleFunction): SimpleFunction;
   off(event: string, callback?: SimpleFunction): void;
   clearCachedProvider(): void;
