@@ -186,13 +186,13 @@ const SProviderScrollGradient = styled.div<IProviderScrollGradientProps>`
   }
 
   &::before {
-    background: linear-gradient(to top, black, transparent 45px);
-    opacity: ${({showBottom}) => (showBottom ? 0.4 : 0)};
+    background: linear-gradient(to top, black, transparent 35px);
+    opacity: ${({showBottom}) => (showBottom ? 0.7 : 0)};
   }
 
   &::after {
-    background: linear-gradient(to bottom, black, transparent 45px);
-    opacity: ${({showTop}) => (showTop ? 0.4 : 0)};
+    background: linear-gradient(to bottom, black, transparent 35px);
+    opacity: ${({showTop}) => (showTop ? 0.7 : 0)};
   }
 
   pointer-events: none;

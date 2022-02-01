@@ -43,11 +43,6 @@ const SIcon = styled.div<IStyedThemeColorOptions>`
     width: 100%;
     height: 100%;
   }
-
-  @media screen and (max-width: 768px) {
-    width: 8.5vw;
-    height: 8.5vw;
-  }
 `
 
 interface IStyedThemeColorOptions {
@@ -62,9 +57,6 @@ const SName = styled.div<IStyedThemeColorOptions>`
   font-weight: 700;
   letter-spacing: -0.01em;
   color: ${({themeColors}) => themeColors.textInContent};
-  @media screen and (max-width: 768px) {
-    font-size: 5vw;
-  }
 `
 
 const SProviderContainer = styled.div<IStyedThemeColorOptions>`
