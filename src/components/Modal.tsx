@@ -55,7 +55,7 @@ const SLightbox = styled.div<ILightboxStyleProps>`
 
   @supports (backdrop-filter: blur(30px)) {
     background: rgba(0, 0, 0, 0.1);
-    backdrop-filter: blur(30px);
+    backdrop-filter: blur(10px);
   }
 
   & * {
