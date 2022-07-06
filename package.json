@@ -1,6 +1,6 @@
 {
   "name": "@siddomains/web3modal",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "description": "A single Web3 / Ethereum provider solution for all Wallets",
   "keywords": [
     "web3",
